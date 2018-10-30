@@ -171,6 +171,7 @@ public class SZMentionsListener: NSObject {
         trigger = mentionTrigger
         cooldownInterval = interval
         super.init()
+        activateCooldownTimer()
         resetEmpty(mentionsTextView)
         mentionsTextView.delegate = self
     }
@@ -431,7 +432,7 @@ extension SZMentionsListener {
     /**
      @brief Activates a cooldown timer
      */
-    private func activateCooldownTimer() {
+    fileprivate func activateCooldownTimer() {
         cooldownTimer?.invalidate()
         let timer = Timer(timeInterval: cooldownInterval, target: self,
                           selector: #selector(SZMentionsListener.cooldownTimerFired(_:)), userInfo: nil,
