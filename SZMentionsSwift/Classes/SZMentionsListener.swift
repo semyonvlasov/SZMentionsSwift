@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol SZMentionsManagerProtocol {
+public protocol SZMentionsManagerProtocol: class {
     /**
      @brief Called when the UITextView is editing a mention.
 
@@ -76,7 +76,7 @@ public class SZMentionsListener: NSObject {
      @brief Manager in charge of handling the creation and dismissal of the mentions
      list.
      */
-    fileprivate var mentionsManager: SZMentionsManagerProtocol
+    fileprivate weak var mentionsManager: SZMentionsManagerProtocol?
 
     /**
      @brief Amount of time to delay between showMentions calls default:0.5
@@ -236,7 +236,7 @@ public class SZMentionsListener: NSObject {
 
         mentionsTextView.selectedRange = selectedRange
 
-        mentionsManager.hideMentionsList()
+        mentionsManager?.hideMentionsList()
 
         return true
     }
@@ -304,14 +304,14 @@ extension SZMentionsListener {
 
                 if let filterString = filterString, let cooldownTimer = cooldownTimer, !cooldownTimer.isValid {
                     stringCurrentlyBeingFiltered = filterString
-                    mentionsManager.showMentionsListWithString(filterString)
+                    mentionsManager?.showMentionsListWithString(filterString)
                 }
                 activateCooldownTimer()
                 return
             }
         }
 
-        mentionsManager.hideMentionsList()
+        mentionsManager?.hideMentionsList()
         mentionEnabled = false
     }
 
@@ -423,7 +423,7 @@ extension SZMentionsListener {
                 let substringTrigger = (mentionsTextView.text as NSString).substring(with: NSRange(location: location, length: 1))
 
                 if substringTrigger == trigger {
-                    mentionsManager.showMentionsListWithString(filterString)
+                    mentionsManager?.showMentionsListWithString(filterString)
                 }
             }
         }
@@ -451,9 +451,9 @@ extension SZMentionsListener: UITextViewDelegate {
         assert((textView.delegate?.isEqual(self))!, "Textview delegate must be set equal to SZMentionsListener")
 
         if text == "\n", addMentionAfterReturnKey, mentionEnabled {
-            mentionsManager.shouldAddMentionOnReturnKey()
+            mentionsManager?.shouldAddMentionOnReturnKey()
             mentionEnabled = false
-            mentionsManager.hideMentionsList()
+            mentionsManager?.hideMentionsList()
 
             return false
         }
