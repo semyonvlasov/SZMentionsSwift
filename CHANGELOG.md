@@ -1,9 +1,103 @@
 # Change Log
 
+## [2.1.0](https://github.com/szweier/SZMentionsSwift/releases/tag/2.1.0) (3/23/2019)
+
+#### Added
+* Carthage - [Issue #105](https://github.com/szweier/SZMentionsSwift/issues/105)
+ 
+## [2.0.9](https://github.com/szweier/SZMentionsSwift/releases/tag/2.0.9) (3/9/2019)
+
+#### Fixed
+* No longer crashes when deleting a mention that is currently being edited when search spaces is enabled [Issue #102](https://github.com/szweier/SZMentionsSwift/issues/102)
+
+## [2.0.8](https://github.com/szweier/SZMentionsSwift/releases/tag/2.0.8) (2/24/2019)
+
+#### Fixed
+* Enable public getter for mentions array [Issue #101](https://github.com/szweier/SZMentionsSwift/issues/101)
+
+## [2.0.7](https://github.com/szweier/SZMentionsSwift/releases/tag/2.0.7) (2/6/2019)
+
+#### Fixed
+* Call proper delegate methods to notify about text changes made by the library [Issue #93](https://github.com/szweier/SZMentionsSwift/issues/93)
+* Fix issue where the selectedRange wasn't properly set when spaceAfterMention was set to true [Issue #96](https://github.com/szweier/SZMentionsSwift/issues/96)
+
+## [2.0.6](https://github.com/szweier/SZMentionsSwift/releases/tag/2.0.6) (1/31/2019)
+
+#### Fixed
+* Delegate method behavior [Issue #87](https://github.com/szweier/SZMentionsSwift/issues/87)
+
+#### Cleaned
+* Refactored code to become more functional
+
+## [2.0.5](https://github.com/szweier/SZMentionsSwift/releases/tag/2.0.5) (10/8/2018)
+
+#### Fixed
+* Allow for mention text attributes to be set via a closure [Issue #80](https://github.com/szweier/SZMentionsSwift/issues/80)
+* Ensure that the mentions list is shown/hidden correctly when pasting text [Issue #84](https://github.com/szweier/SZMentionsSwift/issues/84)
+
+## [2.0.4](https://github.com/szweier/SZMentionsSwift/releases/tag/2.0.4) (8/19/2018)
+
+#### Fixed
+* Allow for resetting of textView and mentionsListener by calling reset() [Issue #75](https://github.com/szweier/SZMentionsSwift/issues/75)
+* Using predictive text on when a textView has a lot of text results in scrolling to the top [Issue #76](https://github.com/szweier/SZMentionsSwift/issues/76)
+
+## [2.0.3](https://github.com/szweier/SZMentionsSwift/releases/tag/2.0.3) (8/16/2018)
+
+#### Fixed
+* Double insertion of test when using predictive text on an empty textview [Issue #72](https://github.com/szweier/SZMentionsSwift/issues/72)
+* Assertion failure when inserting mention after emoji [Issue #73](https://github.com/szweier/SZMentionsSwift/issues/73)
+
+## [2.0.2](https://github.com/szweier/SZMentionsSwift/releases/tag/2.0.2)  (8/7/2018)
+
+#### Fixed
+* Exception 'NSRangeException' for searchSpaces feature [Issue #69](https://github.com/szweier/SZMentionsSwift/issues/69)
+
+## [2.0.1](https://github.com/szweier/SZMentionsSwift/releases/tag/2.0.1)  (8/4/2018)
+
+#### Cleaned
+* Remove SZ prefix from class files
+
+## [2.0.0](https://github.com/szweier/SZMentionsSwift/releases/tag/2.0.0)  (8/4/2018)
+
+#### Cleaned
+* Removed support for < swift 4.0
+* Converted classes to structs where appropriate
+* Renamed variables to remove redundancies
+
+#### Fixed
+* textView(_:shouldChangeTextIn:replacementString:) not being called [Issue #65](https://github.com/szweier/SZMentionsSwift/issues/65)
+
+#### Note
+* This release contains breaking changes. Please refer to the ReadMe and documentation within code for more information.
+
+## [1.1.3](https://github.com/szweier/SZMentionsSwift/releases/tag/1.1.3)  (2/19/2018)
+
+#### Cleaned
+* Allow for multiple triggers to be chosen for triggering mentions [Issue #55](https://github.com/szweier/SZMentionsSwift/issues/55)
+
+## [1.1.2](https://github.com/szweier/SZMentionsSwift/releases/tag/1.1.2)  (11/9/2017)
+
+#### Cleaned
+* Removed the last bit of warnings from most recent Apple updates
+
+## [1.1.1](https://github.com/szweier/SZMentionsSwift/releases/tag/1.1.1) (10/30/2017)
+
+#### Fixed
+* Issue where auto correct moves selected range incorrectly
+
+## [1.1.0](https://github.com/szweier/SZMentionsSwift/releases/tag/1.1.0) (9/23/2017)
+
+#### Added
+* Xcode 9 + Swift 4 compatibility
+
+#### Note
+* This release contains breaking changes, some methods have been updated for clarity as well as classes changes to protocols.
+See README for more information.
+
 ## [1.0.9](https://github.com/szweier/SZMentionsSwift/releases/tag/1.0.9) (9/6/2017)
 
 #### Added
-* The ability to use `pod try SZMentionsSwift` reported by @slxl https://github.com/szweier/SZMentionsSwift/issues/49
+* The ability to use `pod try SZMentionsSwift` reported by @slxl [Issue #49](https://github.com/szweier/SZMentionsSwift/issues/49)
 
 ## [1.0.8](https://github.com/szweier/SZMentionsSwift/releases/tag/1.0.8) (4/30/2017)
 
@@ -24,7 +118,7 @@
 ## [1.0.6](https://github.com/szweier/SZMentionsSwift/releases/tag/1.0.6) (4/02/2017)
 
 #### Added
-* Option to search mentions that contain spaces thanks to @camdengaba. https://github.com/szweier/SZMentionsSwift/issues/42
+* Option to search mentions that contain spaces thanks to @camdengaba. [Issue #42](https://github.com/szweier/SZMentionsSwift/issues/42)
 
 ## [1.0.5](https://github.com/szweier/SZMentionsSwift/releases/tag/1.0.5) (2/10/2017)
 
@@ -44,7 +138,7 @@
 ## [1.0.2](https://github.com/szweier/SZMentionsSwift/releases/tag/1.0.2) (1/25/2017)
 
 #### Fixed
-* Issue reported by @raphaelcruzeiro https://github.com/szweier/SZMentionsSwift/issues/32
+* Issue reported by @raphaelcruzeiro [Issue #32](https://github.com/szweier/SZMentionsSwift/issues/32)
 
 ## [1.0.1](https://github.com/szweier/SZMentionsSwift/releases/tag/1.0.1) (1/10/2017)
 

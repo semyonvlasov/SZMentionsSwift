@@ -6,24 +6,22 @@
 //  Copyright © 2016 Steven Zweier. All rights reserved.
 //
 
-import UIKit
 import SZMentionsSwift
+import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
         window?.makeKeyAndVisible()
 
-        let exampleVC = SZExampleViewController()
+        let exampleVC = ExampleViewController()
         window?.rootViewController = exampleVC
 
         return true
     }
 }
-
