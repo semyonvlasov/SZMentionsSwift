@@ -362,9 +362,9 @@ extension SZMentionsListener {
             if replaceCharacters { mutableAttributedString.mutableString.replaceCharacters(in: range, with: text) }
 
             mutableAttributedString.apply(defaultTextAttributes, range: NSRange(location: range.location, length: text.utf16.count))
-            mutableAttributedString.enumerateAttribute("NSOriginalFont", in: NSRange(location: 0, length: mutableAttributedString.string.utf16.count),
+            mutableAttributedString.enumerateAttribute(NSAttributedString.Key(rawValue: "NSOriginalFont"), in: NSRange(location: 0, length: mutableAttributedString.string.utf16.count),
                                                        options: NSAttributedString.EnumerationOptions(rawValue: 0)) { (value, range, stop) in
-                                                        if value != nil { mutableAttributedString.removeAttribute("NSOriginalFont", range: range) }
+                                                        if value != nil { mutableAttributedString.removeAttribute(NSAttributedString.Key(rawValue: "NSOriginalFont"), range: range) }
             }
             textView.attributedText = mutableAttributedString
 
@@ -403,7 +403,7 @@ extension SZMentionsListener {
      @brief Calls show mentions if necessary when the timer fires
      @param timer: the timer that called the method
      */
-    internal func cooldownTimerFired(_ timer: Timer) {
+    @objc internal func cooldownTimerFired(_ timer: Timer) {
         if let filterString = filterString, filterString != stringCurrentlyBeingFiltered {
             stringCurrentlyBeingFiltered = filterString
 
@@ -438,7 +438,7 @@ extension SZMentionsListener {
                           selector: #selector(SZMentionsListener.cooldownTimerFired(_:)), userInfo: nil,
                           repeats: false)
         cooldownTimer = timer
-        RunLoop.main.add(timer, forMode: RunLoopMode.defaultRunLoopMode)
+        RunLoop.main.add(timer, forMode: RunLoop.Mode.default)
     }
 }
 
